@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">分享助手</string>
+    <string name="save">保存</string>
+    <string name="forward">转发</string>
+    <string name="text_copied">文本已复制到剪切板</string>
+    <string name="file_saved">文件已保存到 %s</string>
+    <string name="permission_explanation_dialog">权限说明</string>
+    <string name="permission_explanation">此应用需要存储权限因为它需要保存文件到您的存储。它不会在nin创建不必要的文件或目录。</string>
+    <string name="app_intro">此应用可以让在应用间分享内容更容易。在下面启用您想要的动作。</string>
+    <string name="use_save_action">使用“保存”动作</string>
+    <string name="save_intro">这将在分享菜单中显示“保存”。它可以让您保存分享的内容或复制文本的分享内容。图片和屏幕截图将保存到特定的目录中，其他类型文件会被保存到下载目录中的 ShareHelper 目录下。这在您想要保存屏来自 Google Assistant （或屏幕搜索）的屏幕截图时很有用。</string>
+    <string name="use_forward_action">使用“转发”动作</string>
+    <string name="forward_intro">这将在分享菜单中显示“转发”。它允许您将内容分享到仅支持旧的分享方式的应用（例如旧版本的 QQ 和微信）。 文本内容将合并主题和文本并分享。 文件将被保存到外部缓存目录以便重新分享，您可以在应用信息中清除缓存。注意：目标应用必须具有 READ_EXTERNAL_STORAGE 权限。</string>
+    <string name="permission_tip">请从启动器或应用信息中打开应用并授予存储权限</string>
+    <string name="please_wait">请稍候…</string>
+    <string name="share_to">分享到…</string>
+    <string name="hide_icon">隐藏/显示启动器图标</string>
+    <string name="hide_icon_message">点按确认以从启动器中隐藏此应用。隐藏图标后，您需要从应用信息中打开应用。要恢复显示，只需要再次使用此菜单。请注意，这个设置的生效可能有短暂延迟。</string>
+    <string name="icon_hidden">应用图标将从启动器隐藏</string>
+    <string name="icon_shown">应用图标将显示在启动器</string>
+    <string name="uri_invalid">无效的 URI</string>
+</resources>

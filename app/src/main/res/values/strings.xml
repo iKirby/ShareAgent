@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">ShareHelper</string>
+    <string name="save">Save</string>
+    <string name="forward">Forward</string>
+    <string name="text_copied">Text copied to clipboard</string>
+    <string name="file_saved">File saved to %s</string>
+    <string name="permission_explanation_dialog">Permission explanation</string>
+    <string name="permission_explanation">Storage permission is required for this app to work as it saves files to your storage. It will never create unnecessary files or directories to your storage.</string>
+    <string name="app_intro">This app can make sharing content between apps easier. Enable action(s) you want using the switches below.</string>
+    <string name="use_save_action">Use Save action</string>
+    <string name="save_intro">This enables the Save action in share menu. It lets you save shared content to storage or copy to clipboard if the content is text. Pictures and screenshots will be saved to their specific directory, other files will be saved to ShareHelper directory in your downloads directory. This is useful if you want to save screenshots from Google Assistant (or screen search).</string>
+    <string name="use_forward_action">Use Forward action</string>
+    <string name="forward_intro">This enables the Forward action in share menu. It lets you share content to apps that only support legacy sharing (e.g. old version of QQ and WeChat). Text content will be merged with EXTRA_SUBJECT from it for apps that only read EXTRA_TEXT from the intent. Files will be saved to external cache directory for forwarding, you can clear cache using the option in app info. NOTE: The app you\'re forwarding the file to must have READ_EXTERNAL_STORAGE permission.</string>
+    <string name="permission_tip">Please open app from launcher or app info and grant storage permission</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="share_to">Share to…</string>
+    <string name="hide_icon">Hide/Show launcher icon</string>
+    <string name="hide_icon_message">You can hide the app from launcher by tapping OK. After hiding icon from launcher, you\'ll need to enter settings from app info. To show icon after hiding, use this menu again. Please note that there might be a short delay for this setting to take effect.</string>
+    <string name="icon_hidden">App icon will be hidden from launcher</string>
+    <string name="icon_shown">App icon will show in launcher</string>
+    <string name="uri_invalid">URI is invalid</string>
+</resources>
