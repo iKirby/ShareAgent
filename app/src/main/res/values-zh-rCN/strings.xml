@@ -19,4 +19,10 @@
     <string name="hide_icon_message">隐藏图标后，您需要从应用信息中打开应用。请注意，这个设置的生效可能有短暂延迟。</string>
     <string name="uri_invalid">无效的 URI</string>
     <string name="settings">更多设置</string>
+    <string name="remove_url_params">移除 URL 中的参数</string>
+    <string name="remove_url_params_text">一些网站使用 URL 参数追踪分享来源，您可以选择移除这些参数。启用此选项并设置要移除参数的 URL 列表。</string>
+    <string name="config_url">配置 URL</string>
+    <string name="config_url_tip">长按移除条目</string>
+    <string name="add">添加</string>
+    <string name="add_edittext_hint">输入 URL 部分</string>
 </resources>

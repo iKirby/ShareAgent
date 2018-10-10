@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ShareHelper</string>
     <string name="save">Save</string>
@@ -15,7 +16,13 @@
     <string name="please_wait">Please wait…</string>
     <string name="share_to">Share to…</string>
     <string name="hide_icon">Hide launcher icon</string>
-    <string name="hide_icon_message">After hiding icon from launcher, you\'ll need to enter settings from app info. Please note that there might be a short delay for this setting to take effect.</string>
+    <string name="hide_icon_message">After hiding icon from launcher, you\'ll need to enter the app from app info. Please note that there might be a short delay for this setting to take effect.</string>
     <string name="uri_invalid">URI is invalid</string>
     <string name="settings">More settings</string>
+    <string name="remove_url_params">Remove parameters from URL</string>
+    <string name="remove_url_params_text">Some websites use parameters to track share source, you can choose to remove these parameters by enabling this and setting a list of domains you want to remove parameters from.</string>
+    <string name="config_url">Config URLs</string>
+    <string name="config_url_tip">Long press to remove item</string>
+    <string name="add">Add</string>
+    <string name="add_edittext_hint">Enter URL pattern</string>
 </resources>

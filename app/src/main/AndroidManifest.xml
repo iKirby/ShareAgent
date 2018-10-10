@@ -61,7 +61,8 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".UrlConfigActivity" />
     </application>
 
 </manifest>

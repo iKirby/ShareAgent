@@ -38,13 +38,17 @@ class MainActivity : Activity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> finish()
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
             R.id.menu_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))
+                true
             }
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
     }
 
     private fun isPermissionGranted() =
