@@ -14,9 +14,8 @@
     <string name="permission_tip">Please open app from launcher or app info and grant storage permission</string>
     <string name="please_wait">Please wait…</string>
     <string name="share_to">Share to…</string>
-    <string name="hide_icon">Hide/Show launcher icon</string>
-    <string name="hide_icon_message">You can hide the app from launcher by tapping OK. After hiding icon from launcher, you\'ll need to enter settings from app info. To show icon after hiding, use this menu again. Please note that there might be a short delay for this setting to take effect.</string>
-    <string name="icon_hidden">App icon will be hidden from launcher</string>
-    <string name="icon_shown">App icon will show in launcher</string>
+    <string name="hide_icon">Hide launcher icon</string>
+    <string name="hide_icon_message">After hiding icon from launcher, you\'ll need to enter settings from app info. Please note that there might be a short delay for this setting to take effect.</string>
     <string name="uri_invalid">URI is invalid</string>
+    <string name="settings">More settings</string>
 </resources>

@@ -15,9 +15,8 @@
     <string name="permission_tip">请从启动器或应用信息中打开应用并授予存储权限</string>
     <string name="please_wait">请稍候…</string>
     <string name="share_to">分享到…</string>
-    <string name="hide_icon">隐藏/显示启动器图标</string>
-    <string name="hide_icon_message">点按确认以从启动器中隐藏此应用。隐藏图标后，您需要从应用信息中打开应用。要恢复显示，只需要再次使用此菜单。请注意，这个设置的生效可能有短暂延迟。</string>
-    <string name="icon_hidden">应用图标将从启动器隐藏</string>
-    <string name="icon_shown">应用图标将显示在启动器</string>
+    <string name="hide_icon">隐藏启动器图标</string>
+    <string name="hide_icon_message">隐藏图标后，您需要从应用信息中打开应用。请注意，这个设置的生效可能有短暂延迟。</string>
     <string name="uri_invalid">无效的 URI</string>
+    <string name="settings">更多设置</string>
 </resources>

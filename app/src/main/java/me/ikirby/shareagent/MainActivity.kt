@@ -9,7 +9,6 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
@@ -26,8 +25,8 @@ class MainActivity : Activity() {
             actionBar?.setDisplayHomeAsUpEnabled(true)
         }
 
-        switch_save.isChecked = isSaveActionEnabled()
-        switch_forward.isChecked = isForwardActionEnabled()
+        switch_save.isChecked = packageManager.isComponentEnabled(ComponentName(packageName, "me.ikirby.shareagent.SaveActivity"))
+        switch_forward.isChecked = packageManager.isComponentEnabled(ComponentName(packageName, "me.ikirby.shareagent.ForwardActivity"))
 
         switch_save.setOnCheckedChangeListener { _, checked -> setSaveActionEnabled(checked) }
         switch_forward.setOnCheckedChangeListener { _, checked -> setForwardActionEnabled(checked) }
@@ -41,7 +40,9 @@ class MainActivity : Activity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> finish()
-            R.id.hide_icon -> showHideIcon()
+            R.id.menu_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -74,47 +75,11 @@ class MainActivity : Activity() {
                     .create()
                     .show()
 
-    private fun isSaveActionEnabled() = packageManager.getComponentEnabledSetting(
-            ComponentName(packageName, "me.ikirby.shareagent.SaveActivity")
-    ) == PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-
-    private fun isForwardActionEnabled() = packageManager.getComponentEnabledSetting(
-            ComponentName(packageName, "me.ikirby.shareagent.ForwardActivity")
-    ) == PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-
-    private fun isLauncherIconHidden() = packageManager.getComponentEnabledSetting(
-            ComponentName(packageName, "me.ikirby.shareagent.MainLauncherActivity")
-    ) == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-
     private fun setSaveActionEnabled(enabled: Boolean) {
-        setComponentEnabled(ComponentName(packageName, "me.ikirby.shareagent.SaveActivity"), enabled)
+        packageManager.setComponentEnabled(ComponentName(packageName, "me.ikirby.shareagent.SaveActivity"), enabled)
     }
 
     private fun setForwardActionEnabled(enabled: Boolean) {
-        setComponentEnabled(ComponentName(packageName, "me.ikirby.shareagent.ForwardActivity"), enabled)
-    }
-
-    private fun setComponentEnabled(component: ComponentName, enabled: Boolean) {
-        val state = if (enabled) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-        packageManager.setComponentEnabledSetting(component, state, PackageManager.DONT_KILL_APP)
-    }
-
-    private fun showHideIcon() {
-        val component = ComponentName(packageName, "me.ikirby.shareagent.MainLauncherActivity")
-        if (isLauncherIconHidden()) {
-            setComponentEnabled(component, true)
-            Toast.makeText(this, R.string.icon_shown, Toast.LENGTH_SHORT).show()
-        } else {
-            AlertDialog.Builder(this)
-                    .setTitle(R.string.hide_icon)
-                    .setMessage(R.string.hide_icon_message)
-                    .setPositiveButton(android.R.string.ok) { _, _ ->
-                        setComponentEnabled(component, false)
-                        Toast.makeText(this, R.string.icon_hidden, Toast.LENGTH_SHORT).show()
-                    }
-                    .setNegativeButton(android.R.string.cancel) { dialogInterface, _ -> dialogInterface.cancel() }
-                    .create()
-                    .show()
-        }
+        packageManager.setComponentEnabled(ComponentName(packageName, "me.ikirby.shareagent.ForwardActivity"), enabled)
     }
 }
