@@ -23,7 +23,7 @@ class MainActivity : Activity() {
         }
 
         if (intent.action == Intent.ACTION_APPLICATION_PREFERENCES) {
-            actionBar!!.setDisplayHomeAsUpEnabled(true)
+            actionBar?.setDisplayHomeAsUpEnabled(true)
         }
 
         switch_save.isChecked = isSaveActionEnabled()
