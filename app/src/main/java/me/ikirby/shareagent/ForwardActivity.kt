@@ -57,15 +57,19 @@ class ForwardActivity : Activity() {
         val uri = if (intent.data != null) intent.data else intent.getParcelableExtra(Intent.EXTRA_STREAM)
         if (uri != null) {
             setContentView(R.layout.activity_progress)
-            Thread(Runnable {
-                val fileName = File(uri.path).name
-                val cacheDir = externalCacheDir!!
-                val nomedia = File(cacheDir.parent, ".nomedia")
-                if (!nomedia.exists()) {
-                    nomedia.createNewFile()
-                }
-                saveFile(fileName, cacheDir, "", uri)
-            }).start()
+            val extCacheDir = externalCacheDir
+            if (extCacheDir != null) {
+                Thread(Runnable {
+                    val fileName = File(uri.path).name
+                    val nomedia = File(extCacheDir.parent, ".nomedia")
+                    if (!nomedia.exists()) {
+                        nomedia.createNewFile()
+                    }
+                    saveFile(fileName, extCacheDir, "", uri)
+                }).start()
+            } else {
+                Toast.makeText(this, R.string.unable_to_access_ext_cache, Toast.LENGTH_SHORT).show()
+            }
         } else {
             Toast.makeText(this, R.string.uri_invalid, Toast.LENGTH_SHORT).show()
             finish()
@@ -73,17 +77,23 @@ class ForwardActivity : Activity() {
     }
 
     private fun saveFile(fileName: String, dir: File, relativePath: String, uri: Uri) {
-        writeFile(contentResolver, fileName, dir, relativePath, uri) { absPath, mimeType: String? ->
+        writeFile(contentResolver, fileName, dir, relativePath, uri) { absPath: String?, mimeType: String? ->
             run {
-                val fileUri = Uri.fromFile(File(absPath))
-                runOnUiThread {
-                    val shareIntent: Intent = Intent().apply {
-                        action = Intent.ACTION_SEND
-                        putExtra(Intent.EXTRA_STREAM, fileUri)
-                        type = mimeType ?: "*/*"
+                if (absPath != null) {
+                    val fileUri = Uri.fromFile(File(absPath))
+                    runOnUiThread {
+                        val shareIntent: Intent = Intent().apply {
+                            action = Intent.ACTION_SEND
+                            putExtra(Intent.EXTRA_STREAM, fileUri)
+                            type = mimeType ?: "*/*"
+                        }
+                        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_to)))
+                        finish()
                     }
-                    startActivity(Intent.createChooser(shareIntent, getString(R.string.share_to)))
-                    finish()
+                } else {
+                    runOnUiThread {
+                        Toast.makeText(this, R.string.unable_to_access_source, Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

@@ -6,7 +6,7 @@ import android.webkit.MimeTypeMap
 import java.io.File
 
 fun writeFile(contentResolver: ContentResolver, fileName: String, dir: File, relativePath: String, uri: Uri,
-             runAfter: (String, String?) -> Unit) {
+              runAfter: (String?, String?) -> Unit) {
     val fileExtension = if (fileName.contains(".")) ".${fileName.substringAfterLast(".")}" else ""
     val fileNameWithoutExtension = fileName.substringBeforeLast(".")
     var file = File(dir, relativePath + fileName)
@@ -18,11 +18,15 @@ fun writeFile(contentResolver: ContentResolver, fileName: String, dir: File, rel
         file.parentFile.mkdirs()
     }
     val inputStream = contentResolver.openInputStream(uri)
+    if (inputStream == null) {
+        runAfter.invoke(null, null)
+        return
+    }
     val outputStream = file.outputStream()
     val buffer = ByteArray(1024)
     var length: Int
     while (true) {
-        length = inputStream!!.read(buffer)
+        length = inputStream.read(buffer)
         if (length > 0) {
             outputStream.write(buffer, 0, length)
         } else {

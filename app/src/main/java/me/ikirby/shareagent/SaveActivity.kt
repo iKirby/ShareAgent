@@ -80,17 +80,23 @@ class SaveActivity : Activity() {
     }
 
     private fun saveFile(fileName: String, dir: File, relativePath: String, uri: Uri) {
-        writeFile(contentResolver, fileName, dir, relativePath, uri) { absPath, _ ->
+        writeFile(contentResolver, fileName, dir, relativePath, uri) { absPath: String?, _ ->
             run {
-                val fileUri = Uri.fromFile(File(absPath))
-                runOnUiThread {
-                    val intent = Intent().apply {
-                        action = Intent.ACTION_MEDIA_SCANNER_SCAN_FILE
-                        data = fileUri
+                if (absPath != null) {
+                    val fileUri = Uri.fromFile(File(absPath))
+                    runOnUiThread {
+                        val intent = Intent().apply {
+                            action = Intent.ACTION_MEDIA_SCANNER_SCAN_FILE
+                            data = fileUri
+                        }
+                        sendBroadcast(intent)
+                        Toast.makeText(this, getString(R.string.file_saved, absPath), Toast.LENGTH_SHORT).show()
+                        finish()
                     }
-                    sendBroadcast(intent)
-                    Toast.makeText(this, getString(R.string.file_saved, absPath), Toast.LENGTH_SHORT).show()
-                    finish()
+                } else {
+                    runOnUiThread {
+                        Toast.makeText(this, R.string.unable_to_access_source, Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }

@@ -27,8 +27,8 @@ class UrlConfigActivity : Activity() {
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
 
         val currentValue = preferences.getString("remove_param_urls", "")
-        if (!currentValue.isNullOrBlank()) {
-            list.addAll(currentValue!!.split(",").toList())
+        if (currentValue != null && currentValue.isNotBlank()) {
+            list.addAll(currentValue.split(",").toList())
         }
 
         val adapter = UrlListAdapter(list, layoutInflater)

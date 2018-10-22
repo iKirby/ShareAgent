@@ -25,4 +25,6 @@
     <string name="config_url_tip">Long press to remove item</string>
     <string name="add">Add</string>
     <string name="add_edittext_hint">Enter URL pattern</string>
+    <string name="unable_to_access_ext_cache">Unable to access external storage</string>
+    <string name="unable_to_access_source">Unable to access source URI</string>
 </resources>
