@@ -25,6 +25,6 @@
     <string name="config_url_tip">长按移除条目</string>
     <string name="add">添加</string>
     <string name="add_edittext_hint">输入 URL 部分</string>
-    <string name="unable_to_access_ext_cache">无法访问外部存储</string>
+    <string name="unable_to_access_ext_cache">无法访问外部缓存目录</string>
     <string name="unable_to_access_source">无法访问来源 URI</string>
 </resources>
