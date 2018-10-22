@@ -49,7 +49,7 @@ class ForwardActivity : Activity() {
             putExtra(Intent.EXTRA_TEXT, content)
             type = "text/plain"
         }
-        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_to)))
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_with)))
         finish()
     }
 
@@ -87,7 +87,7 @@ class ForwardActivity : Activity() {
                             putExtra(Intent.EXTRA_STREAM, fileUri)
                             type = mimeType ?: "*/*"
                         }
-                        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_to)))
+                        startActivity(Intent.createChooser(shareIntent, getString(R.string.share_with)))
                         finish()
                     }
                 } else {

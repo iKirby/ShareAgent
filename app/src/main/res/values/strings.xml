@@ -14,7 +14,7 @@
     <string name="forward_intro">This enables the Forward action in share menu. It lets you share content to apps that only support legacy sharing (e.g. old version of QQ and WeChat). Text content will be merged with EXTRA_SUBJECT from it for apps that only read EXTRA_TEXT from the intent. Files will be saved to external cache directory for forwarding, you can clear cache using the option in app info. NOTE: The app you\'re forwarding the file to must have READ_EXTERNAL_STORAGE permission.</string>
     <string name="permission_tip">Please open app from launcher or app info and grant storage permission</string>
     <string name="please_wait">Please wait…</string>
-    <string name="share_to">Share to…</string>
+    <string name="share_with">Share with…</string>
     <string name="hide_icon">Hide launcher icon</string>
     <string name="hide_icon_message">After hiding icon from launcher, you\'ll need to enter the app from app info. Please note that there might be a short delay for this setting to take effect.</string>
     <string name="uri_invalid">URI is invalid</string>

@@ -14,7 +14,7 @@
     <string name="forward_intro">这将在分享菜单中显示“转发”。它允许您将内容分享到仅支持旧的分享方式的应用（例如旧版本的 QQ 和微信）。 文本内容将合并主题和文本并分享。 文件将被保存到外部缓存目录以便重新分享，您可以在应用信息中清除缓存。注意：目标应用必须具有 READ_EXTERNAL_STORAGE 权限。</string>
     <string name="permission_tip">请从启动器或应用信息中打开应用并授予存储权限</string>
     <string name="please_wait">请稍候…</string>
-    <string name="share_to">分享到…</string>
+    <string name="share_with">分享到…</string>
     <string name="hide_icon">隐藏启动器图标</string>
     <string name="hide_icon_message">隐藏图标后，您需要从应用信息中打开应用。请注意，这个设置的生效可能有短暂延迟。</string>
     <string name="uri_invalid">无效的 URI</string>
