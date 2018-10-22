@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".UrlConfigActivity" />
+        <activity android:name=".ParamsConfigActivity" />
     </application>
 
 </manifest>

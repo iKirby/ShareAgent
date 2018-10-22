@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/white"
-            android:text="@string/config_url_tip" />
+            android:text="@string/config_params_tip" />
 
         <Button
             android:id="@+id/button_add"

@@ -27,7 +27,7 @@ class SettingsActivity : Activity() {
         }
 
         button_config_url.setOnClickListener {
-            startActivity(Intent(this, UrlConfigActivity::class.java))
+            startActivity(Intent(this, ParamsConfigActivity::class.java))
         }
     }
 

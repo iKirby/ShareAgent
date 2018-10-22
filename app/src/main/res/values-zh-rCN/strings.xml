@@ -20,11 +20,11 @@
     <string name="uri_invalid">无效的 URI</string>
     <string name="settings">更多设置</string>
     <string name="remove_url_params">移除 URL 中的参数</string>
-    <string name="remove_url_params_text">一些网站使用 URL 参数追踪分享来源，您可以选择移除这些参数。启用此选项并设置要移除参数的 URL 列表。</string>
-    <string name="config_url">配置 URL</string>
-    <string name="config_url_tip">长按移除条目</string>
+    <string name="remove_url_params_text">一些网站使用 URL 参数追踪分享来源，您可以选择移除这些参数。启用此选项并设置要移除参数的参数名称列表。</string>
+    <string name="config_params">配置 URL</string>
+    <string name="config_params_tip">长按移除条目</string>
     <string name="add">添加</string>
-    <string name="add_edittext_hint">输入 URL 部分</string>
+    <string name="add_edittext_hint">输入参数名</string>
     <string name="unable_to_access_ext_cache">无法访问外部缓存目录</string>
     <string name="unable_to_access_source">无法访问来源 URI</string>
 </resources>

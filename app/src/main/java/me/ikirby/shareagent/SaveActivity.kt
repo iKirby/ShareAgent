@@ -10,6 +10,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.preference.PreferenceManager
 import android.widget.Toast
 import java.io.File
 
@@ -37,10 +38,18 @@ class SaveActivity : Activity() {
     }
 
     private fun handleText(intent: Intent) {
-        val text = intent.getStringExtra(Intent.EXTRA_TEXT)
+        var text = intent.getStringExtra(Intent.EXTRA_TEXT)
         if (text == null) {
             handleOtherFile(intent)
             return
+        }
+        val preference = PreferenceManager.getDefaultSharedPreferences(this)
+        val removeParamsEnabled = preference.getBoolean("remove_url_params_enabled", false)
+        if (removeParamsEnabled && text.isURL()) {
+            val paramsToRemove = preference.getString("remove_params", "")
+            if (paramsToRemove != null && paramsToRemove.isNotBlank()) {
+                text = removeParamsFromURL(text, paramsToRemove.split(","))
+            }
         }
         val subject = intent.getStringExtra(Intent.EXTRA_SUBJECT)
         val content = if (subject != null) "$subject\n$text" else text

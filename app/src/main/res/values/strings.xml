@@ -20,11 +20,11 @@
     <string name="uri_invalid">URI is invalid</string>
     <string name="settings">More settings</string>
     <string name="remove_url_params">Remove parameters from URL</string>
-    <string name="remove_url_params_text">Some websites use parameters to track share source, you can choose to remove these parameters by enabling this and setting a list of domains you want to remove parameters from.</string>
-    <string name="config_url">Config URLs</string>
-    <string name="config_url_tip">Long press to remove item</string>
+    <string name="remove_url_params_text">Some websites use parameters to track share source, you can choose to remove these parameters by enabling this and setting a list of parameters you want to remove.</string>
+    <string name="config_params">Config parameters</string>
+    <string name="config_params_tip">Long press to remove item</string>
     <string name="add">Add</string>
-    <string name="add_edittext_hint">Enter URL pattern</string>
+    <string name="add_edittext_hint">Enter parameter name</string>
     <string name="unable_to_access_ext_cache">Unable to access external cache directory</string>
     <string name="unable_to_access_source">Unable to access source URI</string>
 </resources>

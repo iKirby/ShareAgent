@@ -11,24 +11,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_config_url.*
+import kotlinx.android.synthetic.main.activity_config_params.*
 import kotlinx.android.synthetic.main.dialog_add.*
 
-class UrlConfigActivity : Activity() {
+class ParamsConfigActivity : Activity() {
     private lateinit var preferences: SharedPreferences
     private val list = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_config_url)
+        setContentView(R.layout.activity_config_params)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-        setTitle(R.string.config_url)
+        setTitle(R.string.config_params)
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
 
-        val currentValue = preferences.getString("remove_param_urls", "")
+        val currentValue = preferences.getString("remove_params", "")
         if (currentValue != null && currentValue.isNotBlank()) {
-            list.addAll(currentValue.split(",").toList())
+            list.addAll(currentValue.split(","))
         }
 
         val adapter = UrlListAdapter(list, layoutInflater)
@@ -69,7 +69,7 @@ class UrlConfigActivity : Activity() {
     }
 
     override fun onBackPressed() {
-        preferences.edit().putString("remove_param_urls", list.joinToString(",")).apply()
+        preferences.edit().putString("remove_params", list.joinToString(",")).apply()
         super.onBackPressed()
     }
 
