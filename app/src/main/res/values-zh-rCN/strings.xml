@@ -6,7 +6,7 @@
     <string name="text_copied">文本已复制到剪切板</string>
     <string name="file_saved">文件已保存到 %s</string>
     <string name="permission_explanation_dialog">权限说明</string>
-    <string name="permission_explanation">此应用需要存储权限因为它需要保存文件到您的存储。它不会在nin创建不必要的文件或目录。</string>
+    <string name="permission_explanation">此应用需要存储权限因为它需要保存文件到您的存储。它不会在您的存储创建不必要的文件或目录。</string>
     <string name="app_intro">此应用可以让在应用间分享内容更容易。在下面启用您想要的动作。</string>
     <string name="use_save_action">使用“保存”动作</string>
     <string name="save_intro">这将在分享菜单中显示“保存”。它可以让您保存分享的内容或复制文本的分享内容。图片和屏幕截图将保存到特定的目录中，其他类型文件会被保存到下载目录中的 ShareHelper 目录下。这在您想要保存屏来自 Google Assistant （或屏幕搜索）的屏幕截图时很有用。</string>
@@ -21,8 +21,8 @@
     <string name="settings">更多设置</string>
     <string name="remove_url_params">移除 URL 中的参数</string>
     <string name="remove_url_params_text">一些网站使用 URL 参数追踪分享来源，您可以选择移除这些参数。启用此选项并设置要移除参数的参数名称列表。</string>
-    <string name="config_params">配置 URL</string>
-    <string name="config_params_tip">长按移除条目</string>
+    <string name="config_params">配置参数名</string>
+    <string name="config_params_tip">长按移除</string>
     <string name="add">添加</string>
     <string name="add_edittext_hint">输入参数名</string>
     <string name="unable_to_access_ext_cache">无法访问外部缓存目录</string>

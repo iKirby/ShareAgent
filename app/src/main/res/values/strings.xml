@@ -6,7 +6,7 @@
     <string name="text_copied">Text copied to clipboard</string>
     <string name="file_saved">File saved to %s</string>
     <string name="permission_explanation_dialog">Permission explanation</string>
-    <string name="permission_explanation">Storage permission is required for this app to work as it saves files to your storage. It will never create unnecessary files or directories to your storage.</string>
+    <string name="permission_explanation">Storage permission is required for this app to work as it saves files to your storage. It will never create unnecessary files or directories in your storage.</string>
     <string name="app_intro">This app can make sharing content between apps easier. Enable action(s) you want using the switches below.</string>
     <string name="use_save_action">Use Save action</string>
     <string name="save_intro">This enables the Save action in share menu. It lets you save shared content to storage or copy to clipboard if the content is text. Pictures and screenshots will be saved to their specific directory, other files will be saved to ShareHelper directory in your downloads directory. This is useful if you want to save screenshots from Google Assistant (or screen search).</string>
@@ -21,8 +21,8 @@
     <string name="settings">More settings</string>
     <string name="remove_url_params">Remove parameters from URL</string>
     <string name="remove_url_params_text">Some websites use parameters to track share source, you can choose to remove these parameters by enabling this and setting a list of parameters you want to remove.</string>
-    <string name="config_params">Config parameters</string>
-    <string name="config_params_tip">Long press to remove item</string>
+    <string name="config_params">Config parameter names</string>
+    <string name="config_params_tip">Long press to remove</string>
     <string name="add">Add</string>
     <string name="add_edittext_hint">Enter parameter name</string>
     <string name="unable_to_access_ext_cache">Unable to access external cache directory</string>
