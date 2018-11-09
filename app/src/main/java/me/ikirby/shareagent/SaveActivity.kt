@@ -52,7 +52,7 @@ class SaveActivity : Activity() {
             }
         }
         val subject = intent.getStringExtra(Intent.EXTRA_SUBJECT)
-        val content = if (subject != null || text.contains(subject)) "$subject\n$text" else text
+        val content = if (subject != null && !text.contains(subject)) "$subject\n$text" else text
         val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText("SaveHelperCopy", content)
         clipboardManager.primaryClip = clip

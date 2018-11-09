@@ -48,6 +48,8 @@ private fun getMimeType(contentResolver: ContentResolver, uri: Uri): String? {
 }
 
 fun removeParamsFromURL(urlWithParams: String, paramsToRemove: List<String>): String {
+    if (!urlWithParams.contains("?")) return urlWithParams
+
     var url = urlWithParams.substringBefore("?")
     val currentParams = urlWithParams.substringAfter("?").split("&").toList()
 
