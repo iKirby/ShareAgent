@@ -52,7 +52,7 @@ class ForwardActivity : Activity() {
             }
         }
         val subject = intent.getStringExtra(Intent.EXTRA_SUBJECT)
-        val content = if (subject != null) "$subject\n$text" else text
+        val content = if (subject != null || text.contains(subject)) "$subject\n$text" else text
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT, content)
