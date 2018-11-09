@@ -55,7 +55,11 @@ fun removeParamsFromURL(urlWithParams: String, paramsToRemove: List<String>): St
     currentParams.forEach {
         val arr = it.split("=")
         if (!paramsToRemove.contains(arr[0])) {
-            paramsMap[arr[0]] = arr[1]
+            if (arr.size > 1) {
+                paramsMap[arr[0]] = arr[1]
+            } else {
+                paramsMap[arr[0]] = ""
+            }
         }
     }
     if (paramsMap.isNotEmpty()) {
